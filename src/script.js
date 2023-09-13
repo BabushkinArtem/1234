@@ -1,11 +1,19 @@
-const makeItFunny = (text,n) => {
-    text=prompt("Write text");
-    n=prompt("Write n");
-    text2 = text;
-    while(text%10!=0){
-      alert(text%10!=0);
-    }
-}
+function makeItFunny() {
+  var text = prompt("Input text:");
+  var n = parseInt(prompt("Введите значение n:"));
 
-const button = document.querySelector('button');
+  var text2 = "";
+  var i = 0;
+  
+  while (i < text.length){
+    if ((i + 1) % n === 0) {
+      text2 += text[i].toUpperCase();
+    } else {
+      text2 += text[i];
+    }
+    i++;
+  }
+  alert("Result: " + text2);
+}
+        const button = document.querySelector('button');
 button.addEventListener('click', makeItFunny);
